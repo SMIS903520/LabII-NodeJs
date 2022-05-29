@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const cuentaSchema = new Schema({
     clienteID: String,
     numeroCuenta: String,
-    saldo: String,
+    saldo: String
 
 });
 

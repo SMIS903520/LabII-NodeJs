@@ -1,0 +1,28 @@
+{{> header}}
+<br>
+<h1 class="display-3">Realizar prestamo: </h1>
+<br>
+<dir class="row justify-content-md-center">
+    <div class="col-md-4" style="margin-top:50px">
+        <form action="/prestamos" method="post">
+         <input type="hidden" name="_id" class="form-control" value="{{prestamo._id}}">
+            <div class="form-group">
+                Agregar Cliente ID existente
+                <input type="text" name="clienteID" class="form-control" value="{{prestamo.clienteID}}" required>
+            </div>
+            <div class="form-group">
+                Cantidad requerida para el prestamo
+                <input type="text" name="cantidad" class="form-control" value="{{prestamo.cantidad}}" required>
+            </div>
+            <div class="form-group">
+                Plazo en meses
+                <input type="date" name="plazo" class="form-control" value="{{prestamo.plazo}}" required>
+            </div>
+            <div class="form-group">
+                Fecha de comienzo del prestamo
+                <input type="date" name="fechaComienzo" class="form-control" value="{{prestamo.fechaComienzo}}" required>
+            </div>
+             <center><button type="submit" class="btn btn-info btn-lg">Guardar</button></center>
+        </form>
+    </div>
+</dir>

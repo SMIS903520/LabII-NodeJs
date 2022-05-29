@@ -11,8 +11,8 @@ const methods = require('./methods');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var clienteRouter = require('./routes/clientes');
-//var cuentaRouter = require('./routes/cuentas');
-//var prestamoRouter = require('./routes/prestamos');
+var cuentaRouter = require('./routes/cuentas');
+var prestamoRouter = require('./routes/prestamos');
 var app = express();
 
 // view engine setup
@@ -43,8 +43,8 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/clientes', clienteRouter);
-//app.use('/cuentas', cuentaRouter);
-//app.use('/prestamos', prestamoRouter);
+app.use('/cuentas', cuentaRouter);
+app.use('/prestamos', prestamoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
