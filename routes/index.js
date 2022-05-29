@@ -25,11 +25,11 @@ router.get('/login', (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  const { FullName, email, Password, confirmP } = req.body;
+  const { Fullname, Email, Password, confirmP } = req.body;
 
   try {
     if (Password === confirmP) {
-      user = await User.findOne({ email: email }).then((user) => {
+      user = await User.findOne({ Email: Email }).then((user) => {
         if (user) {
           res.render(registerRoute, {
             message: "El usuario ya esta registrado",
@@ -38,9 +38,9 @@ router.post("/register", async (req, res) => {
         } else {
           const hashedPassword = methods.getHashedPassword(Password);
           const userDB = new User({
-            fullName: FullName,
-            email: email,
-            password: hashedPassword,
+            Fullname: Fullname,
+            Email: Email,
+            Password: hashedPassword,
           });
           userDB.save();
 
@@ -63,10 +63,10 @@ router.post("/register", async (req, res) => {
 
 
 router.post("/login", async (req, res) => {
-  const { email, Password } = req.body;
+  const { Email, Password } = req.body;
   const hashedPassword = methods.getHashedPassword(Password);
 
-  user = await User.findOne({ email: email, password: hashedPassword }).then(
+  user = await User.findOne({ Email: Email, Password: hashedPassword }).then(
     (user) => {
       if (user) {
         const authToken = methods.generateAuthToken();
