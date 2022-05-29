@@ -1,0 +1,24 @@
+{{> header}}
+<br>
+<h1 class="display-3">Agregar cliente nuevo: </h1>
+<br>
+<dir class="row justify-content-md-center">
+    <div class="col-md-4" style="margin-top:50px">
+        <form action="/clientes" method="post">
+         <input type="hidden" name="_id" class="form-control" value="{{cliente._id}}">
+            <div class="form-group">
+                Cliente ID
+                <input type="text" name="clienteID" class="form-control" value="{{cliente.clienteID}}" required>
+            </div>
+            <div class="form-group">
+                Nombre completo
+                <input type="text" name="nombre" class="form-control" value="{{cliente.nombre}}" required>
+            </div>
+            <div class="form-group">
+                DNI
+                <input type="text" name="dni" class="form-control" value="{{cliente.dni}}" required>
+            </div>
+             <center><button type="submit" class="btn btn-info btn-lg">Guardar</button></center>
+        </form>
+    </div>
+</dir>

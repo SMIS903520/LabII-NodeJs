@@ -10,7 +10,7 @@ const methods = require('./methods');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-//var clienteRouter = require('./routes/clientes');
+var clienteRouter = require('./routes/clientes');
 //var cuentaRouter = require('./routes/cuentas');
 //var prestamoRouter = require('./routes/prestamos');
 var app = express();
@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-//app.use('/clientes', clienteRouter);
+app.use('/clientes', clienteRouter);
 //app.use('/cuentas', cuentaRouter);
 //app.use('/prestamos', prestamoRouter);
 
